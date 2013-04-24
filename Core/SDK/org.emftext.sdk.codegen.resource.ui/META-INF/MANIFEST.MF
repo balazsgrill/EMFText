@@ -13,18 +13,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.emftext.sdk.codegen,
  org.emftext.sdk.codegen.resource,
  org.eclipse.debug.core,
- org.eclipse.debug.ui,
- org.eclipse.jface,
- org.eclipse.jface.text,
- org.eclipse.ui,
- org.eclipse.ui.views,
- org.eclipse.ui.editors,
- org.eclipse.ui.ide,
  org.eclipse.emf,
- org.eclipse.emf.edit.ui,
  org.eclipse.emf.ecore.edit,
  org.emftext.sdk.antlr3_4_0,
  org.eclipse.emf.validation,
- org.emftext.sdk.codegen.antlr
+ org.emftext.sdk.codegen.antlr,
+ org.eclipse.text;bundle-version="3.5.200"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.ui.texteditor.spelling

@@ -31,11 +31,11 @@ import static org.emftext.sdk.codegen.resource.ui.IUIClassNameConstants.MAP;
 import static org.emftext.sdk.codegen.resource.ui.IUIClassNameConstants.PATH;
 import static org.emftext.sdk.codegen.resource.ui.IUIClassNameConstants.PLATFORM_UI;
 
-import org.eclipse.ui.ISharedImages;
 import org.emftext.sdk.codegen.composites.JavaComposite;
 import org.emftext.sdk.codegen.parameters.ArtifactParameter;
 import org.emftext.sdk.codegen.resource.GenerationContext;
 import org.emftext.sdk.codegen.resource.generators.IClassNameConstants;
+import org.emftext.sdk.codegen.resource.ui.IUIClassNameConstants;
 import org.emftext.sdk.codegen.resource.ui.generators.UIJavaBaseGenerator;
 
 public class ImageProviderGenerator extends UIJavaBaseGenerator<ArtifactParameter<GenerationContext>> {
@@ -97,7 +97,7 @@ public class ImageProviderGenerator extends UIJavaBaseGenerator<ArtifactParamete
 		sc.addJavadoc(
 			"Returns the image associated with the given key. " +
 			"The key can be either a path to an image file in the resource bundle or " +
-			"a shared image from " + ISharedImages.class.getName() + "."
+			"a shared image from " + IUIClassNameConstants.I_SHARED_IMAGES + "."
 		);
 		sc.add("public " + IMAGE + " getImage(String key) {");
 		sc.add("if (key == null) {");
