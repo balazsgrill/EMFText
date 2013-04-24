@@ -25,8 +25,6 @@ import java.util.Set;
 import org.apache.tools.ant.AntClassLoader;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -44,8 +42,6 @@ import org.emftext.sdk.concretesyntax.ConcreteSyntax;
 import org.emftext.sdk.concretesyntax.resource.cs.ICsTextResource;
 import org.emftext.sdk.concretesyntax.resource.cs.mopp.CsResourceFactory;
 import org.emftext.sdk.concretesyntax.resource.cs.util.CsResourceUtil;
-import org.emftext.sdk.ui.jobs.UICreateResourcePluginsJob;
-import org.emftext.sdk.ui.jobs.UIGenerationContext;
 
 /**
  * A custom task for the ANT build tool that generates a resource plug-in for a 
@@ -100,23 +96,24 @@ public class GenerateTextResourceTask extends AbstractEMFTextAntTask {
 			
 			Result result = null;	
 			
-			boolean useUIJob = false;
-			if (Platform.isRunning()) {
-				File wsFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocationURI());	
-				if(rootFolder.equals(wsFolder))
-					useUIJob = true;
-			}
+//			boolean useUIJob = false;
+//			if (Platform.isRunning()) {
+//				File wsFolder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocationURI());	
+//				if(rootFolder.equals(wsFolder))
+//					useUIJob = true;
+//			}
 			
 			AntProblemCollector problemCollector = new AntProblemCollector(this);
-			if (useUIJob) {
-				UIGenerationContext context = new UIGenerationContext(folderConnector,  problemCollector, syntax);
-				UICreateResourcePluginsJob job = new UICreateResourcePluginsJob();
-				result = job.run(
-							context, 
-							new AntLogMarker(this), 
-							new AntDelegateProgressMonitor(this)
-					);
-			} else {
+//			if (useUIJob) {
+//				UIGenerationContext context = new UIGenerationContext(folderConnector,  problemCollector, syntax);
+//				UICreateResourcePluginsJob job = new UICreateResourcePluginsJob();
+//				result = job.run(
+//							context, 
+//							new AntLogMarker(this), 
+//							new AntDelegateProgressMonitor(this)
+//					);
+//			} else 
+			{
 				AntGenerationContext context = new AntGenerationContext(folderConnector, problemCollector, syntax, rootFolder, syntaxProjectName, generateANTLRPlugin, generateModelCode);
 				AntResourcePluginGenerator generator = new AntResourcePluginGenerator();
 				result = generator.run(
