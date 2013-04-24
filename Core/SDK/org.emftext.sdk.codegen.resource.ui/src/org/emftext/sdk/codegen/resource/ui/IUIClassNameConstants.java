@@ -495,7 +495,7 @@ public interface IUIClassNameConstants extends IClassNameConstants {
 	public static String PROJECTION_ANNOTATION_MODEL = "org.eclipse.jface.text.source.projection.ProjectionAnnotationModel";
 	public static String PROJECTION_SUPPORT = "org.eclipse.jface.text.source.projection.ProjectionSupport";
 	public static String PROJECTION_VIEWER = "org.eclipse.jface.text.source.projection.ProjectionViewer";
-	public static String PROPERTY_DESCRIPTOR = "org.eclipse.ui.views.properties.PropertyDescriptor";
+	public static String PROPERTY_DESCRIPTOR = "org.eclipse.emf.edit.ui.provider.PropertyDescriptor";
 	public static String PROPERTY_SHEET_PAGE = "org.eclipse.ui.views.properties.PropertySheetPage";
 	public static String PROPERTY_SOURCE = "org.eclipse.emf.edit.ui.provider.PropertySource";
 	public static String PROXY = Proxy.class.getName();
